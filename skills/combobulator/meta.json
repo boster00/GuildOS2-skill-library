@@ -1,0 +1,6 @@
+{
+  "name": "combobulator",
+  "description": "Refactor cumbersome / sprawling / repetitive code for readability and modularity. Triggers on: make dry, dry it up, DRY, dry refactor, de-duplicate, remove duplication, improve readability, improve modularity, make it modular, clean up / tidy this function, extract helpers, thin orchestrator, one line per action, simplify a big function, reduce complexity, this function does too much / is too long. Core recipe: reduce a big function to a one-line-per-step ORCHESTRATOR that delegates to named HELPER functions, keeping behavior identical. DRY is MANUAL-TRIGGER only (never auto-DRY).",
+  "author": "GuildOS",
+  "status": "active"
+}

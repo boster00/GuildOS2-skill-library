@@ -1,0 +1,6 @@
+{
+  "name": "questmaster",
+  "description": "Plan user requests into quest-shaped JSON and pick roster adventurers by capability. Owns the quest lifecycle procedures a Questmaster runs: the pre-creation clarify gate, the plan-stage itemizing pass (description → objectives + deliverables + questions), worker stop-state / comment / question digestion rules, the SMART clarification cascade, the review → closing → complete approval arc, and assignee matching. Use when creating, planning, refining, reviewing, or closing a quest, or when authoring objectives, unblocking questions, or checkpoint assets.",
+  "author": "GuildOS",
+  "status": "active"
+}

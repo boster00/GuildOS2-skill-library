@@ -1,0 +1,6 @@
+{
+  "name": "BryanBlog",
+  "description": "Maintain and extend the bryanblog static Next.js content site: add pillars/satellites, recolor, deploy, and (forward-link) replace native articles with CJGEO-generated content. Covers the 7 locked editorial/strategy decisions, the design/palette contract, the CJGEO adoption pipelines (sanitize/anchor/deep-link/diagram-fill and the high-fidelity chrome-preserving variant), the \"Mysterious Author\" branding lock, and ICP-journey mapping that feeds new pillars.",
+  "author": "GuildOS",
+  "status": "active"
+}

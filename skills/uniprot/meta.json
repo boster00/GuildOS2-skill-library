@@ -1,0 +1,6 @@
+{
+  "name": "uniprot",
+  "description": "Per-endpoint map of UniProt data: per-protein .txt flat-file (live REST), per-organism reference-proteome .dat.gz (bulk), TSV column export, and cache row shapes. Use BEFORE building any UniProt scraper or choosing between bulk seed and per-protein live fetch. Documents the whole-human-proteome bulk seed, canonical download URLs, the merged type='uniprot' cache shape, and the bulk-vs-REST-vs-TSV supplier tradeoffs.",
+  "author": "GuildOS",
+  "status": "active"
+}

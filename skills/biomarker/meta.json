@@ -1,0 +1,6 @@
+{
+  "name": "biomarker",
+  "description": "Actions for hydrating gene info card templates with structured external data. Phase 1: zero-LLM; fetches UniProt, Protein Atlas, and Boster catalog. Phase 2 (planned): LLM narrative generation from hydrated data facts. Includes the LOCKED hydration source policy, vendor-ingest indirection, deterministic MW→ protocol rules, PMC caption-proximity search, and the HPA protein-score control source of truth — read these refs before writing any hydration prompt.",
+  "author": "GuildOS",
+  "status": "active"
+}

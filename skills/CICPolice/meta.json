@@ -1,0 +1,6 @@
+{
+  "name": "CICPolice",
+  "description": "Procedure for the CIC Police watchdog. Each round: open claude.ai/code in the VM's Chrome (or local CIC for live sessions), pick up to 3 finished threads, leaf-judge each into Cat 1–5, post the exact fixed-wording reaction per category, report the round as a status table per refReporting. RAM-bounded to 3 threads/round. 10 min between rounds; cron is the heartbeat. Self-nudging is allowed — the 2-consecutive-nudge cap is the only runaway-loop brake.",
+  "author": "GuildOS",
+  "status": "active"
+}

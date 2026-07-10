@@ -1,0 +1,6 @@
+{
+  "name": "PathwayEnrichment",
+  "description": "Turn a Boster pathway-map page into an interactive lead-gen demo (full-height 50/50 hero + accurate clickable map -> collapsible biomarker/antibody form -> CJGEO description with real figures -> assemble + deploy + CIC-verify). Parameterized over pathwayURL + demoURL. Runs under the GM/execution-leaf split. Read refOrchestration first — the GM/leaf separation is what makes the run actually finish.",
+  "author": "GuildOS",
+  "status": "active"
+}

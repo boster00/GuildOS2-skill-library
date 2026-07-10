@@ -1,0 +1,6 @@
+{
+  "name": "cloudflare",
+  "description": "Audit Cloudflare zones, run controlled rollouts of rule changes, and interpret Cloudflare semantics. Read-only zone audits (DNS/firewall/cache/rulesets), post-change smoke-test rituals returning GREEN/YELLOW/RED, batched multi-change rollouts, and the semantic decoders that stop you misreading a legacy 'bypass' as a block or an origin 403 as a Cloudflare block. Primarily bosterbio.com.",
+  "author": "GuildOS",
+  "status": "active"
+}

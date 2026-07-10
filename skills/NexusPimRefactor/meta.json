@@ -1,0 +1,6 @@
+{
+  "name": "NexusPimRefactor",
+  "description": "Reusable 7-step recipe to refactor an application's separate product systems into ONE unified, reality-tested Product Information Management system. Parameterized over `app` (the application being refactored) and `externalSystem` (the order/commerce system the adapters + order/bundle workflow target). Proven end-to-end on Boster Nexus + Zoho Books/Magento (quest a6fc9d83). Use when an app runs two-or-more separate product systems with no single source of truth and must become one canonical PIM as a permanent reusable capability.",
+  "author": "GuildOS",
+  "status": "active"
+}

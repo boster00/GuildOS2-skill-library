@@ -1,0 +1,6 @@
+{
+  "name": "troubleshooting",
+  "description": "Sage-owned claim-verification + resolution substrate. ANY claimed block/error/issue OR claimed done/fixed/verified is FIRST independently reality-checked ('is it true?') by performing the real diagnostic in the user's own channel — never the agent's self-report, never a proxy, never a self-check delegated back to the reporting agent — then resolved or escalated on the verified reality.",
+  "author": "GuildOS",
+  "status": "active"
+}

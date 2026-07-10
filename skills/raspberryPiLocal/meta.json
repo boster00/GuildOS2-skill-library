@@ -1,0 +1,6 @@
+{
+  "name": "raspberryPiLocal",
+  "description": "Access and admin procedures for the household Raspberry Pi over LAN and Tailscale. Actions: setupSshAccess (one-time SSH+key install), setupTailscale (join the tailnet for off-LAN access), setupRemoteDesktop (RealVNC over Tailscale), installClaudeCode (Node 18 + pure-JS Claude Code 1.0.x, the only path on 32-bit armhf), connect (`ssh pi`), connectRemoteDesktop (launch VNC viewer), formularyKeys (canonical credential key names).",
+  "author": "GuildOS",
+  "status": "active"
+}

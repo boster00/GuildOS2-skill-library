@@ -1,0 +1,6 @@
+{
+  "name": "hpa",
+  "description": "Per-tab map of what data lives on each Human Protein Atlas per-gene page. Tells you WHERE the protein-level (IHC / mass-spec) evidence lives vs the mRNA-level (nTPM) evidence per tab. Use BEFORE building any HPA scraper or choosing which tab to point a user at for a given evidence claim. Also documents the whole-catalog normal-tissue-IHC bulk seed, canonical download URLs (with the stale-path 404 trap), the cache row shape, and bulk-vs-OmniPath-vs-scrape supplier tradeoffs.",
+  "author": "GuildOS",
+  "status": "active"
+}

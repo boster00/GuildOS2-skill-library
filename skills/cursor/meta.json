@@ -1,0 +1,6 @@
+{
+  "name": "cursor",
+  "description": "Dispatch tasks to Cursor cloud agents, check status, read conversations, and generate PowerPoint presentations. Send a task via followup message, poll agent status, review conversation history to extract results, dispatch PPT generation that uploads to Supabase Storage, bootstrap a fresh agent session's env, and write minimal adventurer system prompts. All executable logic lives in the paired cursor weapon; this skill holds the prompt/procedure registry.",
+  "author": "GuildOS",
+  "status": "active"
+}

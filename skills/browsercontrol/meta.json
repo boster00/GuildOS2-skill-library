@@ -1,0 +1,6 @@
+{
+  "name": "browsercontrol",
+  "description": "Browser work + VISUAL VERIFICATION, including screenshotting AUTH-GATED / LOGGED-IN pages (Gmail, the GuildOS app, any account the operator is signed into in their MAIN Chrome). Take a screenshot via a Playwright browser logged into the operator's accounts — the way a headless leaf visually verifies a page behind a login. Local Claude uses Claude-in-Chrome MCP; cloud agents use their VM's native Playwright; headless quest LEAVES (which cannot use CIC) drive/screenshot via the leafBrowser weapon — Playwright running system Chrome on the operator's logged-in profile.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "asana",
+  "description": "Read tasks and projects from Asana workspaces. Read all incomplete tasks from a project (by name or ID) with titles, notes, sections, assignees, and completion status, and read recent comments/stories on a task. The full CRUD connector (search/read/write/delete tasks, projects, sections, comments) is the folded-in asana weapon over the Asana REST API v1, using ASANA_ACCESS_TOKEN.",
+  "author": "GuildOS",
+  "status": "active"
+}

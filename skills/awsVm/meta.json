@@ -1,0 +1,6 @@
+{
+  "name": "awsVm",
+  "description": "SSH + graphical remote control of the operator's AWS-hosted Windows VM '<REDACTED-HOST>' (<REDACTED-INSTANCE-ID>, us-east-2, public IP <REDACTED-IP>). Headless: alias `ssh guildos-aws-vm` (key auth, User Administrator, remote shell = PowerShell 7). GUI: Amazon DCV browser desktop at https://<REDACTED-IP>:8443 driven via Claude-in-Chrome. Use to run remote commands, drive the desktop, provision on-demand cloud worker VMs, or repair a broken SSH path. Launching/terminating instances is weapon/aws territory.",
+  "author": "GuildOS",
+  "status": "active"
+}

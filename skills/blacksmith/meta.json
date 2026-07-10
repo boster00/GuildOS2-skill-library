@@ -1,0 +1,6 @@
+{
+  "name": "blacksmith",
+  "description": "Forge new weapons and skill books. Reads a task description, decides whether a new weapon/skill book is needed, produces and reviews a blueprint, then forges the weapon file via the claudecli weapon and verifies it with a browser smoke test. Also patches existing skill book data sections and holds the forging discipline + tool/ACI design rules every new weapon must follow.",
+  "author": "GuildOS",
+  "status": "active"
+}

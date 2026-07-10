@@ -1,0 +1,6 @@
+{
+  "name": "bosterbio",
+  "description": "Execute BosterBio website tasks: product migration, storefront, launch prep, CMS content. Knowledge registry for the bosterbio.com2026 website migration — Magento EAV → Medusa v2 product migration (85,929 products), PLP/PDP/checkout storefront build, Figma-fidelity validation, SEO/DNS launch prep, and CMS page migration. Also documents the live bosterbio.com Magento operations surface: SSH access (Tailscale ProxyJump fallback), the /bapi entrypoint and BAPI product/CMS lookup actions, the CMS-mutation API for adopting CJGEO articles, product re-enable + search reindex, and vendor-image hydration on bundle-and-save PDPs. Use for any bosterbio.com migration, storefront, or live-site task.",
+  "author": "GuildOS",
+  "status": "active"
+}

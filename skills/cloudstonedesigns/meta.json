@@ -1,0 +1,6 @@
+{
+  "name": "cloudstonedesigns",
+  "description": "Maintain and extend the cloudstonedesigns Next.js architecture site: add portfolio projects, hydrate journey pages with CJGEO, manage the contact form, deploy to Vercel. A Next.js 16 architecture portfolio + lead-gen site built around 3 customer decision journeys (uncertainty, recovery, decision anxiety) with pillar + satellite content, an image-first portfolio grid, and a structured intake form. Read refStrategy + refDesign before any editorial or structural change.",
+  "author": "GuildOS",
+  "status": "active"
+}

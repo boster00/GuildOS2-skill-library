@@ -1,0 +1,6 @@
+{
+  "name": "tradeshow",
+  "description": "End-to-end tradeshow planning from booth selection through post-show follow-up. Actions cover creating the Google Calendar planning events for a show, booking the booth in the exhibitor portal, planning travel/shipping logistics, marketing and materials, on-site prep, closing Calendly availability for the travel window, and the post-show lead + debrief cycle.",
+  "author": "GuildOS",
+  "status": "active"
+}

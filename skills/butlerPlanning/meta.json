@@ -1,0 +1,6 @@
+{
+  "name": "butlerPlanning",
+  "description": "Strategy planning and objective tracking threads — the user's main strategy thread where initiatives are discussed and objectives tracked before they formalize into quests. Covers: keeping the objectives table, reading notes/status from OTHER sessions/threads token-efficiently, and delegating scans to cheap-model leaf agents. Use for 'strategy planning', 'objective tracking', 'main strategy thread', 'track these objectives', or 'what is the other thread doing'.",
+  "author": "GuildOS",
+  "status": "active"
+}

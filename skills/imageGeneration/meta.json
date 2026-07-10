@@ -1,0 +1,6 @@
+{
+  "name": "imageGeneration",
+  "description": "Generate images and visual assets. Default AI model is gpt-image-2 (via the openai_images weapon) — will be upgraded to more advanced models over time. Also renders brand-locked, deterministic posters via the poster_render weapon (sprite sheets, illustrations, posters). Two paths: creative/variety output (sprite sheets, illustrations, photo art) via openai_images, and brand-locked, byte-stable deliverables via poster_render (Playwright HTML/CSS → PNG, ~1.4 s/render vs ~135 s for AI gen). Design reading (Figma) lives in the figma skill book, not here.",
+  "author": "GuildOS",
+  "status": "active"
+}

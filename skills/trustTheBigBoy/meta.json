@@ -1,0 +1,6 @@
+{
+  "name": "trustTheBigBoy",
+  "description": "[CONCLUDED 2026-06-09 — EXPERIMENT_ACTIVE=false; all gates now enforce] YOLO-vs-NORMAL A/B harness that evaluated whether Opus 4.8 needs less of GuildOS's deterministic nagging. Verdict (docs/smoke-testing/yolo4-8-performance.md): verbal FORMATTING nags = ceremony, but manufactured-stop/trailing-question = load-bearing (corrective-% metric is blind to them). Code retained dormant; flip EXPERIMENT_ACTIVE to re-open.",
+  "author": "GuildOS",
+  "status": "active"
+}

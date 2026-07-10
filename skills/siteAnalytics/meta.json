@@ -1,0 +1,6 @@
+{
+  "name": "siteAnalytics",
+  "description": "Google Analytics 4 + Google Search Console via the Google REST APIs (OAuth). READ/REPORTING: pull GSC search-performance traffic (clicks, impressions, CTR, position) AND GA4 on-site traffic (sessions, users, pageviews, events, conversions) for a site + date range — the way to measure how traffic changed over time. PROVISION (set up a NEW site): GA4 property+stream, GSC add/verify/sitemap; API-first, CIC only for the one-time OAuth consent click + GA4 account-ToS gap; MCP is read-only and does NOT provision.",
+  "author": "GuildOS",
+  "status": "active"
+}

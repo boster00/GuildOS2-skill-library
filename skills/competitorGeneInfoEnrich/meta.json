@@ -1,0 +1,6 @@
+{
+  "name": "competitorGeneInfoEnrich",
+  "description": "Cache-first sitemap walk → per-product-page Observed MW + UniProt extract → upsert into boster_nexus agc_data_sources_cache as type='competitors', key=uniprot_id. Designed to repeat per competitor brand (Proteintech, Boster, Abcam, ...) without code changes — only the source-name + URL regexes vary. The cache row supplies hedged \"some scientists report observing it at xx kDa\" copy when a competitor's Observed MW differs from Boster's reference.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "worker",
+  "description": "Adventurers whose role is shipping quest deliverables: claim, execute, ship per deliverable, submit for purrview, address feedback or escalate honestly. Use when a session IS the work on a quest — claim and orient on the assigned quest, execute exactly one objective at a time (honoring [IMPORTANT DETAIL] and halting at [co-develop-with-user] anchors), ship each produced asset as a deliverable, run the execute→purrview→review lifecycle gates, and handle bounces or checkpoints. Context-hygiene discipline (dispatch sub-agents for noisy work) applies on every claim.",
+  "author": "GuildOS",
+  "status": "active"
+}

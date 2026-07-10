@@ -1,0 +1,6 @@
+{
+  "name": "justDoIt",
+  "description": "Freestyle fallback skill book. Triggers on user phrases: JDI, jedi, just do it, wing it. Defaults to CIC for browser, native tools for local. Enforces visual verification on every result. Grows over time to tighten freestyle behavior.",
+  "author": "GuildOS",
+  "status": "active"
+}

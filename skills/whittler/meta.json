@@ -1,0 +1,6 @@
+{
+  "name": "whittler",
+  "description": "Curb over-engineering AT CODE-WRITE TIME: write the minimum working code, nothing speculative. Triggers on: don't over-engineer, keep it minimal / simple, smallest change / diff, YAGNI, do we even need this, avoid over-abstraction, no premature abstraction, don't add a dependency for this, simplest thing that works, minimal implementation, be lazy, ponytail. Core recipe: climb THE LADDER (need it? → reuse? → stdlib? → native? → installed dep? → one-liner? → minimal code) and STOP at the first rung that holds — while never simplifying past the no-simplify boundaries (validation, error handling, security, accessibility, requested features). Sibling of combobulator (which cleans up code that already exists); whittler stops you building too much in the first place. DRY is NOT whittler's job — that stays manual-trigger in combobulator.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "flywheel",
+  "description": "Control Flywheel-hosted WordPress sites. No public API/MCP exists — platform settings are CIC-UI-only, WordPress internals are WP-CLI-over-SSH. Covers the dashboard URL/click map for CIC (navigationMap), site notification recipients (notificationEmails), SSH/SFTP credentials get/set + keys (sshCredentials), backups/rollbacks/staging + privacy gating (backupsAndStaging), and creating a WordPress administrator (newWpAdmin). Companion flywheel weapon holds the deep-links and WP-CLI/SSH wrappers.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "cjgeo",
+  "description": "Run CJGEO article-pipeline and content-rendering workflows for the CJGEO SEO Content Writer SaaS. Use to drive the 8-step article writing pipeline (create article, SEO keyword research, competitor topic benchmark, GEO prompts, generate/poll/adopt draft), operate the Content Magic web UI via CIC, read CJGEO's own Supabase (a SEPARATE project from any consuming app), generate/fill images via gpt-image-2, screenshot articles, dedup articles by title, audit the draft-state cron, and render content with Shadow DOM CSS isolation. Includes the wire-level REST API catalog, the locked verify-after-mutate discipline, and the DataForSEO seed-fallback pattern. CJGEO sits at the inductive (broad-generation) end of the content lifecycle — do not editorially reject its raw output.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "aws",
+  "description": "Access the AWS console via Claude-in-Chrome and configure MCP server access to AWS so future Claude Code sessions can hit AWS APIs through MCP instead of CIC clicks. Covers opening/navigating the console, resolving + rotating formulary-stored AWS credentials, installing and verifying the AWS MCP wiring, and deploying/tagging resources with GuildOS discipline (list-before-create, tag convention, region default, budget cost-guard).",
+  "author": "GuildOS",
+  "status": "active"
+}

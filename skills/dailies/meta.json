@@ -1,0 +1,6 @@
+{
+  "name": "dailies",
+  "description": "Recurring curation and upkeep routines: morning email triage under the two-category reply model, daily LinkedIn scan, support-inbox follow-up monitoring, insight cementing, and buffer curation. Use for the daily \"step 1\" / \"morning email\" / \"do the dailies\" flows, support-thread miss detection (insufficient answers + stale threads), and placing user-correction insights into their proper home.",
+  "author": "GuildOS",
+  "status": "active"
+}

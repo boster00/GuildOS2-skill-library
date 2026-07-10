@@ -1,0 +1,6 @@
+{
+  "name": "memoryConsolidator",
+  "description": "Pointer to the built-in `anthropic-skills:consolidate-memory` harness skill + GuildOS deltas (memory-dir path, feedback_* two-token clustering, ≤50-line MEMORY.md cap, askSage-ESCALATE-on-delete). Run when MEMORY.md exceeds ~40 entries or filename clusters appear. Do NOT reimplement the generic reflect/merge/prune procedure — invoke the harness skill and layer the GuildOS conventions.",
+  "author": "GuildOS",
+  "status": "active"
+}

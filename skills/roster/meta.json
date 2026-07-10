@@ -1,0 +1,6 @@
+{
+  "name": "roster",
+  "description": "Manage adventurer agent sessions: spawn replacements, archive stale sessions, audit the roster. Core rule: one adventurer = one live session. Always archive before spawning. Use spawnAgent to replace an adventurer's Cursor cloud-agent session with a fresh one (mandatory archiving of the old session, never two live sessions at once); use auditRoster to scan all adventurers for session health — unresponsive, duplicate, or unarchived sessions — and flag them for action.",
+  "author": "GuildOS",
+  "status": "active"
+}

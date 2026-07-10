@@ -1,0 +1,6 @@
+{
+  "name": "default",
+  "description": "Escalate the quest when truly blocked. The shared fallback action every NPC or adventurer can call: sets the quest stage to review/escalated, assigns to Guildmaster (Pig), and posts the escalation comment with the reason.",
+  "author": "GuildOS",
+  "status": "active"
+}

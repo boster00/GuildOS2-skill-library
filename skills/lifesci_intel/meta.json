@@ -1,0 +1,6 @@
+{
+  "name": "lifesci_intel",
+  "description": "Track and operate the multi-stage ingestion pipeline (PMC, PubMed, NIH grants, university crawl, tagger), the customer-dossier smoke tests, and the recurring backfill-status report. Codifies the cadence and self-correction rule. Use for the 2-hourly backfill-status report, running the locked 10-customer and 20-customer smoke cohorts, and self-correcting queued ingestion work.",
+  "author": "GuildOS",
+  "status": "active"
+}

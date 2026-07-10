@@ -1,0 +1,6 @@
+{
+  "name": "guildmaster",
+  "description": "MA triage: resolve ambiguous phrases, classify situation, assemble SA prompt, dispatch. MA orchestration — interpret each group of user messages into intents, track active objectives in a table, classify each into a fulfillment type (quest or direct_action), assemble and dispatch SA prompts, and evaluate output against closing criteria. Also runs the evolution loops (EL full-run scoring, SE step-checkpoint hardening) that validate substrate changes via fresh-agent dispatch. Use when acting as the MA orchestrator over user requests or running an EL/SE evolution run.",
+  "author": "GuildOS",
+  "status": "active"
+}

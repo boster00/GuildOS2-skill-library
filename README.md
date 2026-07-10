@@ -1,0 +1,63 @@
+# GuildOS2-skill-library
+
+Public skill library for GuildOS2. Each `skills/<name>/` holds a self-contained skill (`SKILL.md` + `meta.json`), packaged from the GuildOS guild and redacted for public release. Consumers vendor a skill folder pinned at a commit SHA; contribute via PR.
+
+58 skills:
+- **3rdtimeisthecharm** — 3rdtimeisthecharm, aka 3TITC. Iteratively IMPROVE / REFINE / TIGHTEN / POLISH a PROMPT (or any artifact) by getting a SECOND OPINION from a 
+- **asana** — Read tasks and projects from Asana workspaces. Read all incomplete tasks from a project (by name or ID) with titles, notes, sections, assign
+- **aws** — Access the AWS console via Claude-in-Chrome and configure MCP server access to AWS so future Claude Code sessions can hit AWS APIs through M
+- **awsVm** — SSH + graphical remote control of the operator's AWS-hosted Windows VM '<REDACTED-HOST>' (<REDACTED-INSTANCE-ID>, us-east-2, public IP <REDA
+- **bigquery** — Query Google BigQuery tables for event data via the REST API v2. List datasets, read the most recent rows from a partitioned table, run arbi
+- **bioinvsync** — SSH into <REDACTED-HOST>, navigate the zohobooksAPI codebase, and execute Zoho CRM/Books workflows (quotes, orders, syncs). Server: <REDACTE
+- **biomarker** — Actions for hydrating gene info card templates with structured external data. Phase 1: zero-LLM; fetches UniProt, Protein Atlas, and Boster 
+- **biomarkerFaq** — Two-layer FAQ hydration for WB biomarker landing pages. Layer A builds an experiment-design FAQ for every gene (UniProt-derived band/glyco/i
+- **blacksmith** — Forge new weapons and skill books. Reads a task description, decides whether a new weapon/skill book is needed, produces and reviews a bluep
+- **bosterbio** — Execute BosterBio website tasks: product migration, storefront, launch prep, CMS content. Knowledge registry for the bosterbio.com2026 websi
+- **browsercontrol** — Browser work + VISUAL VERIFICATION, including screenshotting AUTH-GATED / LOGGED-IN pages (Gmail, the GuildOS app, any account the operator 
+- **BryanBlog** — Maintain and extend the bryanblog static Next.js content site: add pillars/satellites, recolor, deploy, and (forward-link) replace native ar
+- **butlerPlanning** — Strategy planning and objective tracking threads — the user's main strategy thread where initiatives are discussed and objectives tracked be
+- **carbon** — Interactive + graphical control of the user's other Windows PC 'Carbon' (Tailscale hostname <REDACTED-HOST>). Tailscale is the DEFAULT trans
+- **CICPolice** — Procedure for the CIC Police watchdog. Each round: open claude.ai/code in the VM's Chrome (or local CIC for live sessions), pick up to 3 fin
+- **cjgeo** — Run CJGEO article-pipeline and content-rendering workflows for the CJGEO SEO Content Writer SaaS. Use to drive the 8-step article writing pi
+- **claudeUsage** — Read Claude Code SUBSCRIPTION usage (rolling 5h + weekly rate-limit windows) and decide whether to hold/pace work. Authoritative source = An
+- **cloudflare** — Audit Cloudflare zones, run controlled rollouts of rule changes, and interpret Cloudflare semantics. Read-only zone audits (DNS/firewall/cac
+- **cloudstonedesigns** — Maintain and extend the cloudstonedesigns Next.js architecture site: add portfolio projects, hydrate journey pages with CJGEO, manage the co
+- **combobulator** — Refactor cumbersome / sprawling / repetitive code for readability and modularity. Triggers on: make dry, dry it up, DRY, dry refactor, de-du
+- **competitorGeneInfoEnrich** — Cache-first sitemap walk → per-product-page Observed MW + UniProt extract → upsert into boster_nexus agc_data_sources_cache as type='competi
+- **cursor** — Dispatch tasks to Cursor cloud agents, check status, read conversations, and generate PowerPoint presentations. Send a task via followup mes
+- **cursorCJGEO** — Dispatch and monitor a Cursor cloud agent to generate a CJGEO article and integrate it as a bryanblog page. Owns the chaperone-side dispatch
+- **dailies** — Recurring curation and upkeep routines: morning email triage under the two-category reply model, daily LinkedIn scan, support-inbox follow-u
+- **default** — Escalate the quest when truly blocked. The shared fallback action every NPC or adventurer can call: sets the quest stage to review/escalated
+- **DungeonMaster** — Author Supervised Evolution rubrics. Encodes the locked 3-section layout, one-sentence summary template, end-point-from-user-perspective rul
+- **figma** — Read design pages, frames, and assets from Figma via the figma weapon (REST API). Discover pages, read a named page's full node tree, list e
+- **flywheel** — Control Flywheel-hosted WordPress sites. No public API/MCP exists — platform settings are CIC-UI-only, WordPress internals are WP-CLI-over-S
+- **GIOHuntingOnWeb** — Hunt the web for learning-worthy insights and convert the high-impact/low-risk ones into GIOs (Guild Improvement Opportunities) in the Guild
+- **gmail** — Search, read, triage, and label emails via the gmail MCP server. Use for inbox triage (score unread and star the top ~2%), thread/conversati
+- **googleSlides** — Slides-NATIVE fallback (HTML is the default deck substrate — [SB:slideDeckAndVideoGeneration]). Use ONLY when the deliverable must be a real
+- **guildmaster** — MA triage: resolve ambiguous phrases, classify situation, assemble SA prompt, dispatch. MA orchestration — interpret each group of user mess
+- **housekeeping** — Contracts every adventurer follows + the operational lifecycle: init, writeQuest, escalate, comment, submit for review. Shared by ALL advent
+- **hpa** — Per-tab map of what data lives on each Human Protein Atlas per-gene page. Tells you WHERE the protein-level (IHC / mass-spec) evidence lives
+- **imageGeneration** — Generate images and visual assets. Default AI model is gpt-image-2 (via the openai_images weapon) — will be upgraded to more advanced models
+- **justDoIt** — Freestyle fallback skill book. Triggers on user phrases: JDI, jedi, just do it, wing it. Defaults to CIC for browser, native tools for local
+- **lifesci_intel** — Track and operate the multi-stage ingestion pipeline (PMC, PubMed, NIH grants, university crawl, tagger), the customer-dossier smoke tests, 
+- **memoryConsolidator** — Pointer to the built-in `anthropic-skills:consolidate-memory` harness skill + GuildOS deltas (memory-dir path, feedback_* two-token clusteri
+- **nexus** — Execute Boster Nexus / Nexus Armor development tasks: the locked module/action routing shape, adding module actions, migrating legacy /api r
+- **NexusPimRefactor** — Reusable 7-step recipe to refactor an application's separate product systems into ONE unified, reality-tested Product Information Management
+- **PathwayEnrichment** — Turn a Boster pathway-map page into an interactive lead-gen demo (full-height 50/50 hero + accurate clickable map -> collapsible biomarker/a
+- **pim** — Authoritative reference for the three Boster Nexus PIM tables (pim_products, pim_attribute_definitions, pim_product_images) plus the sync-su
+- **questmaster** — Plan user requests into quest-shaped JSON and pick roster adventurers by capability. Owns the quest lifecycle procedures a Questmaster runs:
+- **railway** — Provision, deploy, and operate containerized apps and dev/staging environments on Railway.io: Docker-image services, managed databases (post
+- **raspberryPiLocal** — Access and admin procedures for the household Raspberry Pi over LAN and Tailscale. Actions: setupSshAccess (one-time SSH+key install), setup
+- **roster** — Manage adventurer agent sessions: spawn replacements, archive stale sessions, audit the roster. Core rule: one adventurer = one live session
+- **sage** — The reality gate. Two actions cover the whole turn lifecycle: `preflight` (before any action — registry scan + no-scratch rule) and `askSage
+- **siteAnalytics** — Google Analytics 4 + Google Search Console via the Google REST APIs (OAuth). READ/REPORTING: pull GSC search-performance traffic (clicks, im
+- **slideDeckAndVideoGeneration** — Build branded presentations / slide decks / PPT-replacements AND videos from a single HTML/CSS(/React) substrate. Owns: making slide decks a
+- **supabase** — Operate against a Supabase project. UI-side actions (readTable/readLogs/readAPISettings/readStorageBuckets) drive the web dashboard via Brow
+- **supervisedEvolution** — SE — step-checkpoint sibling of EL. Dispatches a fresh agent per script step, halts at the first behavioral deviation, applies ONE substrate
+- **tradeshow** — End-to-end tradeshow planning from booth selection through post-show follow-up. Actions cover creating the Google Calendar planning events f
+- **troubleshooting** — Sage-owned claim-verification + resolution substrate. ANY claimed block/error/issue OR claimed done/fixed/verified is FIRST independently re
+- **trustTheBigBoy** — [CONCLUDED 2026-06-09 — EXPERIMENT_ACTIVE=false; all gates now enforce] YOLO-vs-NORMAL A/B harness that evaluated whether Opus 4.8 needs les
+- **uniprot** — Per-endpoint map of UniProt data: per-protein .txt flat-file (live REST), per-organism reference-proteome .dat.gz (bulk), TSV column export,
+- **whittler** — Curb over-engineering AT CODE-WRITE TIME: write the minimum working code, nothing speculative. Triggers on: don't over-engineer, keep it min
+- **worker** — Adventurers whose role is shipping quest deliverables: claim, execute, ship per deliverable, submit for purrview, address feedback or escala
+- **zoho** — Search Zoho Books/CRM modules and read Zoho Mail inbox via shared OAuth. Unified search across Zoho Books (sales orders, invoices, bills, ..

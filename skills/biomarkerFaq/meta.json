@@ -1,0 +1,6 @@
+{
+  "name": "biomarkerFaq",
+  "description": "Two-layer FAQ hydration for WB biomarker landing pages. Layer A builds an experiment-design FAQ for every gene (UniProt-derived band/glyco/isoform/PTM questions plus gene-agnostic forum-mined troubleshooting archetypes) as the citation/AEO engine; Layer B adds commercial-capture questions only for genes that clear the DataForSEO search-volume floor. Use to hydrate one gene or many, run the batched commercial screen, and emit schema.org FAQPage JSON-LD.",
+  "author": "GuildOS",
+  "status": "active"
+}

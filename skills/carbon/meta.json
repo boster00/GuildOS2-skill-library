@@ -1,0 +1,6 @@
+{
+  "name": "carbon",
+  "description": "Interactive + graphical control of the user's other Windows PC 'Carbon' (Tailscale hostname <REDACTED-HOST>). Tailscale is the DEFAULT transport for every action (works on- and off-LAN); LAN <REDACTED-IP> is fallback only. Actions: connectRemoteDesktop (DEFAULT = RDP over Tailscale; VNC-over-LAN is the no-MS-account alternative), connect (SSH), screenshot (capture Carbon's screen over SSH without an RDP/VNC session), enableVncOverTailscale (open the no-password-MS-account VNC path off-LAN), reachabilityCheck (TCP-probe ports — ICMP is firewalled), facts (canonical hosts/IPs/ports).",
+  "author": "GuildOS",
+  "status": "active"
+}

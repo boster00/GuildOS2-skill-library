@@ -1,0 +1,6 @@
+{
+  "name": "pim",
+  "description": "Authoritative reference for the three Boster Nexus PIM tables (pim_products, pim_attribute_definitions, pim_product_images) plus the sync-substrate tables (pim_sync_protocols, pim_field_authority) and the mapProductInfo function that hydrates the catalog from a Magento internal-export CSV. Read before reading or writing PIM data, adding a products column (the Type-A vs Type-B bucketing rule matters), designing a new ingest pipeline, wiring a product_template, or rolling back a bulk ingest. Covers column-by-column table structure, the Magento-row → PIM-row converter and its transforms, the end-to-end internal-export hydration path, and the migration history (072 → 110).",
+  "author": "GuildOS",
+  "status": "active"
+}

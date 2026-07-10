@@ -1,0 +1,6 @@
+{
+  "name": "zoho",
+  "description": "Search Zoho Books/CRM modules and read Zoho Mail inbox via shared OAuth. Unified search across Zoho Books (sales orders, invoices, bills, ...) and Zoho CRM (Contacts, Quotes, Leads, Deals), plus read the authenticated user's Zoho Mail accounts, recent messages, and full message bodies (e.g. verification/OTP codes). Mail is per-user: the API only reads the authenticated user's OWN mailbox. Executable dispatch/OAuth lives in the zoho weapon.",
+  "author": "GuildOS",
+  "status": "active"
+}

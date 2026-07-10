@@ -1,0 +1,6 @@
+{
+  "name": "railway",
+  "description": "Provision, deploy, and operate containerized apps and dev/staging environments on Railway.io: Docker-image services, managed databases (postgres/mysql/redis/mongo), persistent volumes, public domains, env vars, build/deploy logs. Use to stand up a host for an app, clone a production site into a disposable container, or deploy a Dockerfile to the cloud. Wraps the authenticated `railway` CLI (weapon: railway). Read refAuthSetup first; provisioning is billable — the cost gate is a LOCKED escalate.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "supabase",
+  "description": "Operate against a Supabase project. UI-side actions (readTable/readLogs/readAPISettings/readStorageBuckets) drive the web dashboard via Browserclaw CDP. bulkUpload performs efficient idempotent COPY-based ingest directly against Postgres on port 5432. runSql + applyMigrations run arbitrary SQL and apply schema migrations (DDL: ALTER/CREATE TABLE) on the remote DB via the Management API + access token — the agent-side path for `supabase db push` when no CLI / DB password is available, and the ONLY way to run DDL (the service REST key cannot).",
+  "author": "GuildOS",
+  "status": "active"
+}

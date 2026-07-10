@@ -1,0 +1,6 @@
+{
+  "name": "claudeUsage",
+  "description": "Read Claude Code SUBSCRIPTION usage (rolling 5h + weekly rate-limit windows) and decide whether to hold/pace work. Authoritative source = Anthropic's own rate_limit_event; token sums are a calibrated fallback. Actions: quickCheck (sub-second HOLD/OK line), checkUsage (the caravan pacing gate), readRateLimit (the raw authoritative verdict), plus ad-hoc usageWindows / categorizeUsage analysis. Use for caravan dispatch pacing or any 'am I rate-limited / how much Claude quota is left' question.",
+  "author": "GuildOS",
+  "status": "active"
+}

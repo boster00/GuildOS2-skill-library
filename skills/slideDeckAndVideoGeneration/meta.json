@@ -1,0 +1,6 @@
+{
+  "name": "slideDeckAndVideoGeneration",
+  "description": "Build branded presentations / slide decks / PPT-replacements AND videos from a single HTML/CSS(/React) substrate. Owns: making slide decks and presentations in HTML (self-contained, real tables, 16:9), turning gpt-image-2 / AI-generated images into slide backgrounds with editable text on top, and generating MP4 video from HTML/React via Remotion. Holds the LOCKED HTML-vs-PowerPoint decision, the deck-generator benchmark, the gpt-image-2 hybrid pattern, the Remotion video recipe, and the HTML→pptx escape hatch. Use for any 'make a deck / presentation / slides / PPT' or 'make a video from HTML' task.",
+  "author": "GuildOS",
+  "status": "active"
+}

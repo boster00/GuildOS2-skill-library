@@ -1,0 +1,6 @@
+{
+  "name": "DungeonMaster",
+  "description": "Author Supervised Evolution rubrics. Encodes the locked 3-section layout, one-sentence summary template, end-point-from-user-perspective rule, ownership notation ([TYPE:identifier->method]), level-of-detail rule, and [IMPORTANT DETAIL] labeling convention. Use to write a new SE rubric for a stated goal — producing a markdown doc that follows the locked 3-section layout (summary+end-point → steps storyboard → behavior-logic encyclopedia). Read refLayoutContract before authorSERubric.",
+  "author": "GuildOS",
+  "status": "active"
+}

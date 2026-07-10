@@ -1,0 +1,6 @@
+{
+  "name": "googleSlides",
+  "description": "Slides-NATIVE fallback (HTML is the default deck substrate — [SB:slideDeckAndVideoGeneration]). Use ONLY when the deliverable must be a real, collaborative/shareable Google Slides file. Builds/edits branded decks via the Slides API presentations.batchUpdate: slides, text, tables, images-by-URL, backgrounds, brand colors. Covers OAuth setup and the LOCKED finding that API image insert bypasses the UI 'cannot upload images' restriction.",
+  "author": "GuildOS",
+  "status": "active"
+}

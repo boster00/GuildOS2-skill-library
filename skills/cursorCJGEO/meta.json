@@ -1,0 +1,6 @@
+{
+  "name": "cursorCJGEO",
+  "description": "Dispatch and monitor a Cursor cloud agent to generate a CJGEO article and integrate it as a bryanblog page. Owns the chaperone-side dispatch loop, the .cursorrules template handoff, credential handoff via followups, FF-merge of the Cursor sandbox branch, and live CIC verification.",
+  "author": "GuildOS",
+  "status": "active"
+}

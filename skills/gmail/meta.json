@@ -1,0 +1,6 @@
+{
+  "name": "gmail",
+  "description": "Search, read, triage, and label emails via the gmail MCP server. Use for inbox triage (score unread and star the top ~2%), thread/conversation analysis, follow-up monitoring, and label management. Gmail is agent-driven: call the mcp__gmail__* tools directly. Includes context-budget-beating unsubscribe-link parsers (gmail weapon) for marketing emails whose decoded bodies exceed the context window.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "figma",
+  "description": "Read design pages, frames, and assets from Figma via the figma weapon (REST API). Discover pages, read a named page's full node tree, list every top-level frame/component, and export frames/components as image URLs by node id. Primary file: Boster-Design-Master-File (NMfOvoGgMVFPYM4nLtN8zD). Requires FIGMA_ACCESS_TOKEN.",
+  "author": "GuildOS",
+  "status": "active"
+}

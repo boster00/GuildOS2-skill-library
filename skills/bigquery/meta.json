@@ -1,0 +1,6 @@
+{
+  "name": "bigquery",
+  "description": "Query Google BigQuery tables for event data via the REST API v2. List datasets, read the most recent rows from a partitioned table, run arbitrary StandardSQL queries against any table, and stream-insert rows. Use for fetching event data out of BigQuery datasets; runQuery is the path for non-partitioned tables or any custom SQL.",
+  "author": "GuildOS",
+  "status": "active"
+}

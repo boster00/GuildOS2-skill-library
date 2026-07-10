@@ -1,0 +1,6 @@
+{
+  "name": "housekeeping",
+  "description": "Contracts every adventurer follows + the operational lifecycle: init, writeQuest, escalate, comment, submit for review. Shared by ALL adventurers — merges the former codex book (contracts, named protocols, tier-column ownership, spawn contract, honest escalation) with the quest operational actions (design → html_markup → execute → purrview → review stages, deliverable self-checks, agent session health). Use for any core quest-lifecycle or adventurer-contract operation.",
+  "author": "GuildOS",
+  "status": "active"
+}

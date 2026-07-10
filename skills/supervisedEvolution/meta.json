@@ -1,0 +1,6 @@
+{
+  "name": "supervisedEvolution",
+  "description": "SE — step-checkpoint sibling of EL. Dispatches a fresh agent per script step, halts at the first behavioral deviation, applies ONE substrate fix, re-dispatches the same step, advances only when that step is compliant. Includes the post-PASS finale (offer to commit a produced SMART plan to a skill book). Use to execute or resume step-checkpoint evolution runs against a premade DungeonMaster-authored rubric, with per-step fresh-agent dispatch, one-fix-per-retry up to a 10-attempt budget, archive-over-delete, and advance-only-on-PASS.",
+  "author": "GuildOS",
+  "status": "active"
+}

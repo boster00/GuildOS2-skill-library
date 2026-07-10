@@ -1,0 +1,6 @@
+{
+  "name": "sage",
+  "description": "The reality gate. Two actions cover the whole turn lifecycle: `preflight` (before any action — registry scan + no-scratch rule) and `askSage` (before any user-facing message — WWCD question gate + success-claim reality gate). Both are also enforced via .claude hooks. Also owns the plan gate for reusable abstractions, the concurrent-session branch lock, and the canonical Quest Report / BCS reporting standard.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "bioinvsync",
+  "description": "SSH into <REDACTED-HOST>, navigate the zohobooksAPI codebase, and execute Zoho CRM/Books workflows (quotes, orders, syncs). Server: <REDACTED-HOST> (<REDACTED-IP>), cPanel shared hosting; main app at <REDACTED-HOST>public_html/zohobooksAPI/. Use to run shell commands over SSH, map the server file layout, create + email Zoho CRM quotes from a SKU, and check web/PHP process health.",
+  "author": "GuildOS",
+  "status": "active"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "nexus",
+  "description": "Execute Boster Nexus / Nexus Armor development tasks: the locked module/action routing shape, adding module actions, migrating legacy /api routes, Zoho Books/CRM/Desk data sync (incremental vs manual-only total_sync), provider-agnostic transactional email, the cart/to-quote quote-request endpoint, the legacy Chrome-extension dispatcher, and RunPod container deploys.",
+  "author": "GuildOS",
+  "status": "active"
+}
