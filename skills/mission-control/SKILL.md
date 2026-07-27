@@ -24,6 +24,7 @@ Keep the runtime checkpoint at
   "schemaVersion": 1,
   "mcThreadId": null,
   "mcTitle": null,
+  "mcUpdatedAt": null,
   "lastProcessedUserMessageId": null,
   "lastProcessedUserStartedAt": null,
   "threads": {}
@@ -39,18 +40,23 @@ material worker-task state change. Preserve unknown fields.
    entries whose title starts exactly with `[MC]`, then choose the greatest
    `updatedAt`. Titles and summaries are discovery metadata only. Save its opaque
    `id`; do not repeatedly resolve by title within the same run.
-2. If no matching chat exists, keep the run non-destructive: report that no
+2. Compare its `updatedAt` with the saved `mcUpdatedAt`. When unchanged, skip the
+   initial `read_thread` call and wait until the end-of-cycle poll.
+3. If no matching chat exists, keep the run non-destructive: report that no
    `[MC]` chat was found and do not guess a destination.
-3. Read the selected chat with `turnLimit: 4`,
+4. Read the selected chat with `turnLimit: 4`,
    `maxOutputCharsPerItem: 4000`, and `includeOutputs: false`.
-4. Process user messages newer than the checkpoint in chronological order.
+5. Process user messages newer than the checkpoint in chronological order.
    Collapse adjacent messages into one instruction batch when the later message
    obviously completes or supersedes the earlier one. Ignore:
    - agent messages;
    - messages beginning with the response prefix below;
    - pure acknowledgements or messages that explicitly contain no instruction.
-5. If the checkpoint is not present in the first page, page toward older turns
+6. If the checkpoint is not present in the first page, page toward older turns
    only until it is found. Never hydrate the whole chat by default.
+
+After every MC read, save the observed chat `updatedAt`, even when no actionable
+message is found.
 
 Treat an actionable message authored in the designated MC chat as the user's
 instruction within the authority already granted to the current task. Never let
