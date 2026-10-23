@@ -3,7 +3,7 @@
 <!-- GUILDOS-SKILL name="worker" -->
 
 <!-- GUILDOS-DESC -->
-Adventurers whose role is shipping quest deliverables: claim, execute, ship per deliverable, submit for purrview, address feedback or escalate honestly. Use when a session IS the work on a quest — claim and orient on the assigned quest, execute exactly one objective at a time (honoring [IMPORTANT DETAIL] and halting at [co-develop-with-user] anchors), ship each produced asset as a deliverable, run the execute→purrview→review lifecycle gates, and handle bounces or checkpoints. Context-hygiene discipline (dispatch sub-agents for noisy work) applies on every claim.
+Adventurers whose role is shipping quest deliverables: claim, execute, ship per deliverable, submit for purrview, address feedback or escalate honestly.
 <!-- /GUILDOS-DESC -->
 
 ## Files
@@ -12,15 +12,7 @@ Adventurers whose role is shipping quest deliverables: claim, execute, ship per 
 ```markdown
 ---
 name: worker
-description: >-
-  Adventurers whose role is shipping quest deliverables: claim, execute, ship
-  per deliverable, submit for purrview, address feedback or escalate honestly.
-  Use when a session IS the work on a quest — claim and orient on the assigned
-  quest, execute exactly one objective at a time (honoring [IMPORTANT DETAIL]
-  and halting at [co-develop-with-user] anchors), ship each produced asset as a
-  deliverable, run the execute→purrview→review lifecycle gates, and handle
-  bounces or checkpoints. Context-hygiene discipline (dispatch sub-agents for
-  noisy work) applies on every claim.
+description: "Execute quest deliverables: claim and orient, execute one objective at a time, ship as deliverable, run execute→purrview→review gates."
 ---
 
 # Worker
@@ -29,11 +21,16 @@ description: >-
 > action lives in the single content source `libs/skill_book/worker/index.js`. Load it on demand:
 > `node libs/adventurer/run-action.mjs --howto worker <action>` (or read the source directly).
 
+## Agent portability
+
+This skill applies to any capable agent. Native tool names describe adapters, not agent eligibility. Follow `worker.refAgentCapabilities` through the shared action runner; preserve the required outcome, evidence, authorization and configured backend.
+
 ## Actions
 
 - **addressFeedbackOrBounce** — When a quest bounces back to execute (user feedback via cron, Cat purrview bounce, or local review bounce), read the feedback, fix the named objectives/assets, then resubmit.
 - **claimQuest** — Orient on the assigned quest before doing any work. Call questmaster.summarizeQuest FIRST for a one-shot digest (stage, next objective, open/answered questions, deliverable fill); then deep-read ONLY what it flags. Read worker.refContextHygiene first.
 - **executeStep** — New objectives-model execution. The dispatcher loaded ONE objective into `running`; read that objective row's input/method/output and do its concrete job, honoring [IMPORTANT DETAIL] verbatim and halting at any [co-develop-with-user] anchor. Read worker.refContextHygiene first.
+- **refAgentCapabilities** — Shared agent-agnostic execution contract: resolve native equivalents by capability while preserving evidence, authorization, surface and configured backend requirements.
 - **refContextHygiene** — Reference: the worker's load-bearing discipline rule. Prefer dispatching sub-agents to absorb noise (file reads, DOM scans, batch comparisons) rather than pulling content into your main session context. Read this on every quest claim.
 - **refZoomOut** — Reference: the abstraction-mapping reflex. When you are unfamiliar with a section of code, a substrate, or a quest's surrounding system, zoom out one layer before drilling in.
 - **reportAnchorResolution** — Compose the confirmation after a [co-develop-with-user] anchor is resolved: name the anchor, the chosen method (with any fallback condition), the source comment, and confirm execution resumed. GM voice, no follow-up question.
@@ -45,8 +42,67 @@ description: >-
 - **runLifecycleGates** — After the last pre-Checkpoint objective lands, drive the execute→purrview→review gate arc: questExecution.submit (lockphrase), then a REAL per-objective purrview review (not a rubber-stamp), then questPurrview.approve (lockphrase). New objectives/deliverables model.
 - **shipItemArtifact** — Per-asset shipping flow: produce the asset an objective's output[].asset names, upload to GuildOS_Bucket, UPSERT the deliverables row (name/kind/ref), and write ONE quest_comment with your worker rationale.
 - **submitForPurrview** — When every objective up to the Checkpoint is status='done' and the assets those objectives produce exist as deliverables rows with a ref, call housekeeping.submitForPurrview. The gate enforces the new objectives/deliverables model.
-- **surfaceCheckpoint** — At a Checkpoint (quest now at review), open the View Results carousel via CIC focused on the Checkpoint objective's assembled asset, pre-filtered to every objective with view_results != 'No', and ask the user to approve or bounce.
+- **surfaceCheckpoint** — At a Checkpoint (quest now at review), open the View Results carousel via the connected operator-browser adapter focused on the Checkpoint objective's assembled asset, pre-filtered to every objective with view_results != 'No', and ask the user to approve or bounce.
 - **workerSelfAudit** — Before submitForPurrview, run a 30-second self-audit pass on every gated objective + the assets it produces.
+```
+<!-- /GUILDOS-FILE -->
+
+<!-- GUILDOS-FILE: libs/skill_book/worker/agent-capabilities.js -->
+```js
+// Canonical execution contract. Seed/template copies are generated distributions.
+export const AGENT_CAPABILITY_CONTRACT = `AGENT CAPABILITIES (applies to this procedure and inherited handoffs): This workflow is available to any agent with the required capabilities. Agent names, native tool prefixes, UI labels and local transcript paths in examples describe adapters, not eligibility gates. Discover the current runtime's documented equivalent for skill loading, shell/files, browser control, session records, delegation and reporting; exercise that capability before declaring it absent. Never invent tool names or treat another harness's missing namespace as a blocker. Use the shared skill runner when native skill loading is unavailable. A configured integration is not proof that it works.
+
+Preserve the required outcome, authentication, operator browser/window, actual rendered evidence, provenance, approval boundaries and any explicitly chosen backend/model. Another adapter controlling the same required surface is valid; a different surface is not. Runtime alternatives do not authorize provider fallback, more spending, external messages, new threads or delegation. Delegate only when the user or applicable instructions authorize it and the runtime supports it; otherwise complete the work directly. Use the actual runtime's session identity and transcript resolver rather than assuming another agent's home directory. Report the specific missing capability after a bounded real check, not an agent-brand mismatch.
+
+For operator-browser work, use tabs in the existing signed-in Chrome window, preferably background tabs; visible tabs there are allowed. Do not create new windows or substitute a separate/headless browser. Record the real adapter and capture provenance without relabeling it. Treat a vendor name in an old handoff as an implementation example; an explicit user-required driver or backend remains a contract constraint and must be changed through the authorized workflow before claiming completion.`;
+
+export function withAgentCapabilities(instruction) {
+  if (!instruction || instruction.includes("AGENT CAPABILITIES (")) return instruction;
+  return `${AGENT_CAPABILITY_CONTRACT}\n\n${instruction}`;
+}
+```
+<!-- /GUILDOS-FILE -->
+
+<!-- GUILDOS-FILE: libs/skill_book/worker/agent-capabilities.test.js -->
+```js
+import test from "node:test";
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
+import { skillBook as browser } from "../browsercontrol/index.js";
+import { AGENT_CAPABILITY_CONTRACT } from "./agent-capabilities.js";
+
+const runner = fileURLToPath(new URL("../../adventurer/run-action.mjs", import.meta.url));
+
+test("registered procedure loading exposes portable browser and discovery actions", () => {
+  for (const [book, action] of [["browsercontrol", "validateBrowser"], ["browsercontrol", "validateCIC"], ["skillDiscover", "addToStartupInstructions"], ["worker", "refAgentCapabilities"]]) {
+    const run = spawnSync(process.execPath, ["--no-warnings", runner, "--howto", book, action], { encoding: "utf8" });
+    assert.equal(run.status, 0, `${book}.${action}: ${run.stderr}`);
+    const payload = JSON.parse(run.stdout);
+    assert.equal(payload.ok, true);
+    assert.ok(payload.howTo.startsWith("AGENT CAPABILITIES ("));
+    assert.equal(payload.howTo.split("AGENT CAPABILITIES (").length, 2, "contract appears once");
+  }
+});
+
+test("legacy browser gate preserves evidence while accepting equivalent adapters", () => {
+  assert.equal(browser.toc.validateBrowser.howTo, browser.toc.validateCIC.howTo);
+  const text = browser.toc.validateBrowser.howTo;
+  assert.match(text, /Another connected adapter driving that SAME browser is valid/);
+  assert.match(text, /Do not invent equivalent API names/);
+  assert.match(text, /HTTP 200.*not sufficient/);
+  assert.doesNotMatch(text, /screenshot must be.*mcp__claude-in-chrome__/);
+});
+
+test("the distributed seed and cloud lease carry the canonical capability contract", async () => {
+  const seed = await import("file:///C:/Users/xsj70/GuildOS2/templates/guild/libs/skill_book/worker/agent-capabilities.js");
+  const lease = await import("file:///C:/Users/xsj70/GuildOS2/libs/quest/lease/prompts.js");
+  assert.equal(seed.AGENT_CAPABILITY_CONTRACT, AGENT_CAPABILITY_CONTRACT);
+  assert.equal(lease.AGENT_CAPABILITY_CONTRACT, AGENT_CAPABILITY_CONTRACT);
+  const compose = readFileSync("C:/Users/xsj70/GuildOS2/libs/quest/lease/index.js", "utf8");
+  assert.match(compose, /\[AGENT_CAPABILITY_CONTRACT, handoff, continuity/);
+});
 ```
 <!-- /GUILDOS-FILE -->
 
@@ -63,12 +119,18 @@ description: >-
  * provide a clear unblock_path.
  */
 
+import { AGENT_CAPABILITY_CONTRACT } from "./agent-capabilities.js";
+
 export const skillBook = {
   id: "worker",
   title: "Worker",
   description: "Adventurers whose role is shipping quest deliverables: claim, execute, ship per deliverable, submit for purrview, address feedback or escalate honestly.",
   steps: [],
   toc: {
+    refAgentCapabilities: {
+      description: "Shared agent-agnostic execution contract: resolve native equivalents by capability while preserving evidence, authorization, surface and configured backend requirements.",
+      howTo: AGENT_CAPABILITY_CONTRACT,
+    },
     refContextHygiene: {
       description: "Reference: the worker's load-bearing discipline rule. Prefer dispatching sub-agents to absorb noise (file reads, DOM scans, batch comparisons) rather than pulling content into your main session context. Read this on every quest claim.",
       howTo: `Your context window is the most expensive resource you have. Bloat it and you make worse decisions, miss details, run out of budget mid-task. Treat the main worker agent (you) as an orchestrator that holds **decisions, state, and the next step** — not raw data, intermediate analysis, or large file dumps.
@@ -134,7 +196,7 @@ You are executing exactly ONE \`objectives\` row (the one \`questmaster.tickWork
 4. **Status transition** on the objective row:
    - success → \`running → done\`.
    - needs user eyes / Checkpoint → keep per \`view_results\` (see 5).
-   - genuine blocker → **leave the objective OPEN** (do NOT mark it done), raise an \`unblocking\` quest_question (\`unblocks_objective_ids\` → this objective) through the diplomatic gate, and escalate the quest (\`housekeeping.escalate\` / \`moveQuestToEscalated\`) with a clear unblock_path; do not fake completion. The open question + \`escalated\` stage ARE the block — there is no \`attention\` objective status (retired 2026-06-15).
+   - genuine blocker → **leave the objective OPEN** (do NOT mark it done), raise an \`unblocking\` quest_question (\`unblocks_objective_ids\` → this objective) under the quest-success escalation principle, and escalate the quest (\`housekeeping.escalate\` / \`moveQuestToEscalated\`) with a clear unblock_path; do not fake completion. The open question + \`escalated\` stage ARE the block — there is no \`attention\` objective status (retired 2026-06-15).
 5. **Respect \`view_results\`:** if the just-finished objective's \`view_results='Checkpoint'\`, HALT execution past this objective (do not auto-advance to the next pending objective) — the lifecycle gate / user reviews it first. \`Show\`/\`No\` → the dispatcher's next tick may pick up the next pending objective.
 6. **Record method developments** in the objective's \`notes\` (concise) when execution discovers a reusable method (e.g. an SSH/SQL retrieval approach) — the closing-stage \`questmaster.scanForUncommittedMethods\` reads notes for skill-book-capture candidates.
 
@@ -240,11 +302,11 @@ Keep it tight (~3-4 sentences). Don't re-summarize the whole quest.
 `,
     },
     surfaceCheckpoint: {
-      description: "At a Checkpoint (quest now at review), open the View Results carousel via CIC focused on the Checkpoint objective's assembled asset, pre-filtered to every objective with view_results != 'No', and ask the user to approve or bounce.",
+      description: "At a Checkpoint (quest now at review), open the View Results carousel via the connected operator-browser adapter focused on the Checkpoint objective's assembled asset, pre-filtered to every objective with view_results != 'No', and ask the user to approve or bounce.",
       howTo: `The quest just reached \`stage='review'\` via \`questPurrview.approve\`. Surface it for the user's decision:
 
-1. **Open the View Results carousel in CIC** focused on the Checkpoint objective's produced asset (the assembled \`final_pathway_page\` for the hypoxia quest — objective 8). Pre-filter the carousel to every objective whose \`view_results != 'No'\` (i.e. \`Show\` or \`Checkpoint\`), with the Checkpoint objective as the anchor so the user lands on the assembled/deployed result FIRST, then can page through the other presentable objectives.
-2. **Compose the prompt**: state the checkpoint was reached AND that you ran a real purrview review (briefly name what you actually checked per objective), that all objective verdicts passed so the quest is at \`review\`, the carousel is open in CIC pre-filtered with the Checkpoint anchor, and ask the user to **approve** the result or **bounce it back to execute with a reason**.
+1. **Open the View Results carousel in the existing operator browser** focused on the Checkpoint objective's produced asset (the assembled \`final_pathway_page\` for the hypoxia quest — objective 8). Pre-filter the carousel to every objective whose \`view_results != 'No'\` (i.e. \`Show\` or \`Checkpoint\`), with the Checkpoint objective as the anchor so the user lands on the assembled/deployed result FIRST, then can page through the other presentable objectives.
+2. **Compose the prompt**: state the checkpoint was reached AND that you ran a real purrview review (briefly name what you actually checked per objective), that all objective verdicts passed so the quest is at \`review\`, the carousel is open in the existing operator browser pre-filtered with the Checkpoint anchor, and ask the user to **approve** the result or **bounce it back to execute with a reason**.
 3. This is a sanctioned user-facing decision point (review-stage approval is user-owned) — it is a real fork, not a manufactured stop. Surface it and wait; do not self-approve the review stage.
 
 Keep the prompt tight. Do not re-summarize the whole plan; the carousel shows the work.
@@ -282,7 +344,7 @@ Keep it tight (~3-4 sentences). This is the run's end state; make it a clean Sta
       howTo: `Per asset (one entry of an objective's \`output[].asset\`):
 
 1. Produce the asset. Open it yourself first — does it actually satisfy that objective's \`output[].verification\`? If not, regenerate. Don't ship work that doesn't match its spec.
-2. Upload to GuildOS storage bucket (\`GuildOS_Bucket\`, on the GuildOS project — <REDACTED-PROJECT-REF>.supabase.co). Path convention: \`cursor_cloud/<questId>/<assetName>.<ext>\` or \`general/<questId>/<assetName>.<ext>\` for non-screenshot artifacts. Helper: \`supabase_storage\` weapon. (For inline assets — markdown/json — \`ref\` can be a storage path or an inline reference; pick the \`kind\` accordingly.)
+2. Upload to GuildOS storage bucket (\`GuildOS_Bucket\`, on the GuildOS project — sdrqhejvvmbolqzfujej.supabase.co). Path convention: \`cursor_cloud/<questId>/<assetName>.<ext>\` or \`general/<questId>/<assetName>.<ext>\` for non-screenshot artifacts. Helper: \`supabase_storage\` weapon. (For inline assets — markdown/json — \`ref\` can be a storage path or an inline reference; pick the \`kind\` accordingly.)
 3. UPSERT the deliverables row (UNIQUE \`(quest_id, name)\` — resubmits replace in place; never invent \`_v2\` names). Prefer the \`libs/quest\` helper so the shape stays correct:
 \`\`\`javascript
 import { writeDeliverable } from "@/libs/quest";
@@ -343,6 +405,19 @@ If the feedback is impossible to address (spec is genuinely infeasible), don't f
 3. Did I open the asset myself and verify it shows what the objective's \`output[].verification\` claims? Don't outsource this to the judge — be the first reviewer.
 4. Did I record the reusable method developments (if any) in the objective's \`notes\` so the closing-stage \`questmaster.scanForUncommittedMethods\` can find them?
 5. Is there at least one worker \`quest_comments\` rationale row for each produced asset?
+
+## CRITICAL: Proof-required deliverables
+
+If the acceptance criteria contain any of these words — **proof**, **demonstrate**, **show**, **evidence**, **working implementation**, **verified** — the artifact MUST contain ACTUAL outputs, not documentation or pseudocode. Concretely:
+
+- ❌ An API spec page or flow diagram does NOT satisfy "working implementation" — the endpoint must exist and respond.
+- ❌ A pseudocode block or decision diagram does NOT satisfy "show fallback behavior" — an actual rendered page or curl response is required.
+- ❌ A specification of what WOULD happen is not proof of what DOES happen.
+- ✅ Actual curl output showing HTTP 200 + response body (with real \`report_id\`, \`public_url\`, etc.)
+- ✅ A screenshot or rendered HTML showing the actual page at the actual URL
+- ✅ A 401 curl response from an actual unauthenticated request
+
+When in doubt: can I paste this artifact's content into a bug report and have a developer reproduce the behavior? If no → it is documentation, not proof.
 
 If any answer is "no" or "kinda" — fix it before submit. The submit gate will reject anyway, but better you catch it than the gate.
 
