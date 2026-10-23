@@ -2,7 +2,7 @@
 
 Public skill library for GuildOS2. Each `skills/<name>/` holds a self-contained skill (`SKILL.md` + `meta.json`), packaged from the GuildOS guild and redacted for public release. Consumers vendor a skill folder pinned at a commit SHA; contribute via PR.
 
-58 skills:
+59 skills:
 - **3rdtimeisthecharm** — 3rdtimeisthecharm, aka 3TITC. Iteratively IMPROVE / REFINE / TIGHTEN / POLISH a PROMPT (or any artifact) by getting a SECOND OPINION from a 
 - **asana** — Read tasks and projects from Asana workspaces. Read all incomplete tasks from a project (by name or ID) with titles, notes, sections, assign
 - **aws** — Access the AWS console via Claude-in-Chrome and configure MCP server access to AWS so future Claude Code sessions can hit AWS APIs through M
@@ -41,6 +41,7 @@ Public skill library for GuildOS2. Each `skills/<name>/` holds a self-contained 
 - **justDoIt** — Freestyle fallback skill book. Triggers on user phrases: JDI, jedi, just do it, wing it. Defaults to CIC for browser, native tools for local
 - **lifesci_intel** — Track and operate the multi-stage ingestion pipeline (PMC, PubMed, NIH grants, university crawl, tagger), the customer-dossier smoke tests, 
 - **memoryConsolidator** — Pointer to the built-in `anthropic-skills:consolidate-memory` harness skill + GuildOS deltas (memory-dir path, feedback_* two-token clusteri
+- **mission-control** — Coordinate ongoing Codex initiatives through the newest ordinary ChatGPT conversation whose title starts with `[MC]`, using compact native task reads, checkpoints, and bounded waits.
 - **nexus** — Execute Boster Nexus / Nexus Armor development tasks: the locked module/action routing shape, adding module actions, migrating legacy /api r
 - **NexusPimRefactor** — Reusable 7-step recipe to refactor an application's separate product systems into ONE unified, reality-tested Product Information Management
 - **PathwayEnrichment** — Turn a Boster pathway-map page into an interactive lead-gen demo (full-height 50/50 hero + accurate clickable map -> collapsible biomarker/a

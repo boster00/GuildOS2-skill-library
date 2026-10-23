@@ -1,0 +1,6 @@
+{
+  "name": "mission-control",
+  "description": "Coordinate ongoing Codex initiatives through the newest ordinary ChatGPT conversation whose title starts with [MC], using compact native task reads, checkpoints, and bounded waits.",
+  "author": "GuildOS",
+  "status": "active"
+}

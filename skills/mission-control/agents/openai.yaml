@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mission Control"
+  short_description: "Coordinate Codex tasks through one MC chat"
+  default_prompt: "Use $mission-control to run the one-minute mission-control monitoring loop."
